@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotieh Fortune Clássica</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
+    <div class="maquina-completa">
+      <div class="topo-maquina">
+        <h1>ROTIEH FORTUNE</h1>
+      </div>
+
+      <div class="corpo-maquina">
+        <div class="container">
+          <div class="grid-container">
+            <div class="grid-cell" id="celula-1"></div>
+            <div class="grid-cell" id="celula-2"></div>
+            <div class="grid-cell" id="celula-3"></div>
+            <div class="grid-cell" id="celula-4"></div>
+            <div class="grid-cell" id="celula-5"></div>
+            <div class="grid-cell" id="celula-6"></div>
+            <div class="grid-cell" id="celula-7"></div>
+            <div class="grid-cell" id="celula-8"></div>
+            <div class="grid-cell" id="celula-9"></div>
+          </div>
+
+          <div class="painel-info destaque">
+            <p class="ganho-sequencia">
+              Prêmio da Sequência: <span id="premio-atual">0</span>
+            </p>
+          </div>
+
+          <div class="painel-info">
+            <p>Saldo: <span id="saldo">100</span> moedas</p>
+
+            <div class="aposta-container">
+              <label>Aposta:</label>
+              <div class="value-selector" id="aposta-selector">10</div>
+              <input type="hidden" id="aposta" value="10" />
+            </div>
+
+            <div class="controle-audio">
+              <button id="btn-audio" title="Alternar áudio">🔊</button>
+              <button id="btn-pagamentos" title="Tabela de Pagamentos">
+                ℹ️
+              </button>
+            </div>
+
+            <div class="turbo-container">
+              <button id="btn-turbo">Turbo</button>
+              <div class="value-selector" id="rodadas-turbo-selector">10</div>
+              <input type="hidden" id="rodadas-turbo" value="10" />
+            </div>
+          </div>
+          <p class="mensagem" id="resultado"></p>
+          <div id="historico-container">
+            <ul id="historico-lista"></ul>
+          </div>
+        </div>
+
+        <div class="alavanca-area">
+          <div class="alavanca" id="alavanca">
+            <div class="alavanca-cabo"></div>
+            <div class="alavanca-puxador"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="selection-modal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <h3 id="modal-title">Selecione o valor</h3>
+        <div id="modal-grid" class="modal-grid"></div>
+        <button id="modal-close-btn" class="modal-close-btn">Fechar</button>
+      </div>
+    </div>
+
+    <div id="modal-pagamentos" class="modal-overlay hidden">
+      <div class="modal-content">
+        <h3>Tabela de Pagamentos</h3>
+        <div id="pagamentos-grid" class="pagamentos-grid"></div>
+        <button id="pagamentos-modal-close-btn" class="modal-close-btn">
+          Fechar
+        </button>
+      </div>
+    </div>
+
+    <div class="fireworks-container left" id="fireworks-left"></div>
+    <div class="fireworks-container right" id="fireworks-right"></div>
+
+    <audio id="musica-fundo" loop preload="auto">
+      <source
+        src="audio/Party Tunes – Brainrot Rap [Official Video] - Party Tunes (youtube).mp3"
+        type="audio/mpeg"
+      />
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <audio id="som-vitoria" preload="auto">
+      <source src="audio/Vitoria.mp3.mp3" type="audio/mpeg" />
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
